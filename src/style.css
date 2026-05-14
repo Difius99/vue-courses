@@ -1,0 +1,43 @@
+html,
+body {
+  height: 100%;
+  background: #f4f5f9;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Onest-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/Onest-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Onest";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/Onest-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nekst";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/Nekst-SemiBold.ttf") format("truetype");
+}
