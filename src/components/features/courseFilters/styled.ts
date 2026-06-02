@@ -4,7 +4,8 @@ import { COLORS as _ } from "../../../constants";
 export const Container = styled("div")`
   display: flex;
   flex-direction: column;
-  top: 194px;
+
+  margin-top: 40px;
   z-index: 10;
   position: sticky;
 
