@@ -1,16 +1,23 @@
 <script setup lang="ts">
-import { computed, inject, ref, type Ref } from "vue";
+import { computed, inject, ref } from "vue";
 import CoursesSection from "../../../components/features/coursesSection/CoursesSection.vue";
 import PopularTags from "../../../components/features/popularTags/PopularTags.vue";
 import Carousel from "../../../components/ui/carousel/Carousel.vue";
 import { useCourses } from "../../../components/features/courses/model/useCourses";
 import { useFilteredCourses } from "../../../components/features/courses/model/useFilteredCourses";
 import { popularTagsMock } from "../../../mocks/PopularTags.mocks";
-import type { MultiSelectOption } from "../../../components/ui/multiSelect/types";
-import { useRouter } from "vue-router";
 
-const appliedFilters =
-  inject<Ref<Record<string, MultiSelectOption[]>>>("filtersStore");
+import { useRouter } from "vue-router";
+import type { useAppliedFilters } from "../../../components/features/appliedFilters/model/useAppliedFilters.ts";
+
+const filtersStore =
+  inject<ReturnType<typeof useAppliedFilters>>("filtersStore");
+
+if (!filtersStore) {
+  throw new Error("filtersStore is not provided");
+}
+
+const { appliedFilters } = filtersStore;
 
 const { courses } = useCourses();
 

@@ -5,6 +5,7 @@ import { computed } from "vue";
 import { useRoute } from "vue-router";
 import PageTitle from "./components/ui/pageTitle/PageTitle.vue";
 import AppFooter from "./components/layout/appFooter/AppFooter.vue";
+import AppliedFiltersProvider from "./components/providers/AppliedFiltersProvider.vue";
 
 const route = useRoute();
 const pageTitle = computed(() => (route.meta.title as string) ?? "");
@@ -13,6 +14,8 @@ const pageTitle = computed(() => (route.meta.title as string) ?? "");
 <template>
   <AppHeader />
   <PageTitle v-if="pageTitle" :title="pageTitle" />
-  <RouterView />
+  <AppliedFiltersProvider>
+    <RouterView />
+  </AppliedFiltersProvider>
   <AppFooter />
 </template>
